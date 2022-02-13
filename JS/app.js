@@ -32,7 +32,13 @@ document.getElementById("key-pad").addEventListener("click", function (event) {
 function verifyPin() {
   const pin = document.getElementById("display-pin").value;
   const typeNumbers = document.getElementById("type-numbers").value;
+  const notifySuccess = document.getElementById("notify-success");
+  const notifyFail = document.getElementById("notify-fail");
   if (pin == typeNumbers) {
-    console.log("matched yay");
-  } else [console.log("Opps")];
+    notifySuccess.style.display = "block";
+    notifyFail.style.display = "none";
+  } else {
+    notifyFail.style.display = "block";
+    notifySuccess.style.display = "none";
+  }
 }
